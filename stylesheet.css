@@ -74,6 +74,10 @@ h3 {
   font-weight: 600;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .summary {
   max-width: 42rem;
   margin-bottom: 2rem;
