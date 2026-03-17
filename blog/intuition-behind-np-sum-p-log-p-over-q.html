@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intuition Behind np.sum(p * np.log(p / q)) | Edward Morgan</title>
+    <meta
+      name="description"
+      content="An intuition-first explanation of why np.sum(p * np.log(p / q)) is the core of KL divergence."
+    >
+    <meta name="author" content="Edward Morgan">
+    <link rel="icon" href="../images/favicon/favicon.svg?v=2" type="image/svg+xml">
+    <link rel="icon" href="../images/favicon/favicon-32x32.png?v=2" sizes="32x32" type="image/png">
+    <link rel="icon" href="../images/favicon/favicon-16x16.png?v=2" sizes="16x16" type="image/png">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico?v=2" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png?v=2">
+    <link rel="stylesheet" href="../stylesheet.css">
+  </head>
+  <body>
+    <main class="page article-page">
+      <div class="intro article-intro">
+        <p class="kicker"><a href="../index.html">Edward Morgan</a> / Blog</p>
+        <h1>Intuition Behind <code>np.sum(p * np.log(p / q))</code></h1>
+        <p class="summary">March 17, 2026 · 2 min read</p>
+      </div>
+
+      <article class="article-content">
+        <p>
+          Think of it as a <strong>mismatch score</strong>.
+        </p>
+
+        <p>
+          <code>np.sum(p * np.log(p / q))</code> asks:
+        </p>
+
+        <p>
+          <strong>At places where P believes probability is important, how badly does Q disagree?</strong>
+        </p>
+
+        <p>
+          Here is the intuition piece by piece.
+        </p>
+
+        <p>
+          Suppose at one x-location:
+        </p>
+
+        <ul class="article-list">
+          <li><code>p</code> is large</li>
+          <li><code>q</code> is also large</li>
+        </ul>
+
+        <p>
+          Then <code>p/q</code> is near 1, <code>log(p/q)</code> is near 0, so that point
+          contributes almost nothing. This means, <strong>Q agrees with P there</strong>.
+        </p>
+
+        <p>
+          Now suppose:
+        </p>
+
+        <ul class="article-list">
+          <li><code>p</code> is large</li>
+          <li><code>q</code> is very small</li>
+        </ul>
+
+        <p>
+          Then <code>p/q</code> is big, <code>log(p/q)</code> is positive and large, and
+          after multiplying by <code>p</code>, that point contributes a lot. This means,
+          <strong>P says this region matters, but Q is not paying enough attention</strong>,
+          so the penalty is large.
+        </p>
+
+        <p>
+          Now suppose:
+        </p>
+
+        <ul class="article-list">
+          <li><code>p</code> is tiny</li>
+          <li><code>q</code> is wrong there</li>
+        </ul>
+
+        <p>
+          Then even if <code>q</code> is very different, the contribution is small because
+          you multiply by <code>p</code>. This means, <strong>KL mostly cares about being wrong where P puts mass</strong>.
+        </p>
+
+        <p>
+          So the weighting by <code>p</code> is the key idea:
+        </p>
+
+        <p>
+          <code>p_i log(p_i / q_i)</code>
+        </p>
+
+        <p>
+          says:
+        </p>
+
+        <p>
+          <strong>How wrong is Q at point i, weighted by how much P cares about that point?</strong>
+        </p>
+
+        <h2>Why the log?</h2>
+
+        <p>
+          The log turns ratios into a sensible relative penalty.
+        </p>
+
+        <ul class="article-list">
+          <li>if <code>p = q</code>, then <code>p/q = 1</code>, and <code>log(1) = 0</code></li>
+          <li>if <code>q</code> is half of <code>p</code>, you get a penalty</li>
+          <li>if <code>q</code> is much smaller than <code>p</code>, the penalty grows a lot</li>
+          <li>if <code>q</code> is larger than <code>p</code>, the term can become negative locally, but total KL is still nonnegative</li>
+        </ul>
+
+        <p>
+          So log is measuring <strong>relative surprise</strong> or <strong>relative mismatch</strong>,
+          not just raw difference.
+        </p>
+
+        <h2>Very Simple Picture</h2>
+
+        <p>
+          Imagine <code>P</code> is the truth, and <code>Q</code> is your model.
+        </p>
+
+        <p>
+          Then KL is asking:
+        </p>
+
+        <p>
+          <strong>If the world really follows P, how much extra surprise do I get by pretending it follows Q instead?</strong>
+        </p>
+
+        <ul class="article-list">
+          <li>small KL means <code>Q</code> is a good approximation of <code>P</code></li>
+          <li>large KL means <code>Q</code> misses important parts of <code>P</code></li>
+        </ul>
+
+        <h2>Physical Intuition With Curves</h2>
+
+        <p>
+          If <code>P(x)</code> is centered at 0 and <code>Q(x)</code> is shifted to the right:
+        </p>
+
+        <ul class="article-list">
+          <li>near <code>x = 0</code>, <code>P</code> is high</li>
+          <li>but <code>Q</code> may be low there</li>
+          <li>that creates a large penalty</li>
+        </ul>
+
+        <p>
+          That is why KL increases as the two curves separate.
+        </p>
+
+        <h2>One-Sentence Intuition</h2>
+
+        <p>
+          <code>np.sum(p * np.log(p / q))</code> is:
+        </p>
+
+        <p>
+          <strong>the average log-mismatch of Q from P, where the averaging is done using P itself.</strong>
+        </p>
+      </article>
+    </main>
+  </body>
+</html>
