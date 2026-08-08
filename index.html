@@ -6,9 +6,10 @@
     <title>Edward Morgan</title>
     <meta
       name="description"
-      content="Edward Morgan is a robotics engineer focused on dynamics, control, motion planning, and simulation for underwater and manipulation systems."
+      content="Edward Morgan is a robotics engineer focused on dynamics, control, motion planning, and simulation for robotic systems."
     >
     <meta name="author" content="Edward Morgan">
+    <meta name="robot-clue" content="start: view-source, then follow the hydrodynamic trail">
     <link rel="icon" href="images/favicon/favicon.svg?v=2" type="image/svg+xml">
     <link rel="icon" href="images/favicon/favicon-32x32.png?v=2" sizes="32x32" type="image/png">
     <link rel="icon" href="images/favicon/favicon-16x16.png?v=2" sizes="16x16" type="image/png">
@@ -17,287 +18,80 @@
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body>
-    <main class="page">
-      <div class="intro">
-        <p class="kicker">Edward Morgan</p>
-        <h1>Robotics engineer working across dynamics, control, and simulation.</h1>
-        <p class="summary">
-          PhD candidate in Mechanical Engineering at Louisiana State University, with
-          research in marine and manipulation robotics focused on physics-based modeling,
-          stochastic systems, robust and model-based control, motion planning, and
-          real-world deployment.
-        </p>
-        <div class="jump-links" aria-label="Section navigation">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#publications">Publications</a>
-          <a href="#blog">Blog</a>
-          <a href="#education">Education</a>
-          <a href="#service">Service</a>
-          <a href="#skills">Skills</a>
-        </div>
-        <div class="contact-block">
-          <a href="mailto:edmorgangh@gmail.com" target="_blank" rel="noopener noreferrer">edmorgangh@gmail.com</a>
-          <a href="https://scholar.google.com/citations?user=y5jZ-kwAAAAJ&amp;hl=en&amp;authuser=1" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+    <!-- clue 1/4: robots leave traces in frames, source, and state. next: inspect the lineup image element. -->
+    <main class="page" aria-label="Edward Morgan profile">
+      <header class="topbar">
+        <a class="name" href="/">Edward Morgan</a>
+        <nav class="links" aria-label="External links">
+          <a href="mailto:edmorgangh@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=y5jZ-kwAAAAJ&amp;hl=en&amp;authuser=1" target="_blank" rel="noopener noreferrer">Scholar</a>
           <a href="https://github.com/edxmorgan" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/edward-morgan-b30ab387/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="Edward_Morgan_CV.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
-        </div>
-      </div>
+        </nav>
+      </header>
 
-      <div class="content">
-        <div id="about" class="section">
-          <div class="section-heading">
-            <p>01</p>
-            <h2>About</h2>
-          </div>
-          <div class="section-body prose">
-            <p>
-              Before and alongside academia, I have worked across robotics and production
-              software. That includes manipulation work at Amazon Robotics and backend
-              systems engineering at Stanbic Bank, where I built software used in large-scale
-              financial workflows.
-            </p>
-          </div>
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="media-reel" aria-label="Robotics media">
+          <img class="media-lineup" src="images/1776738427616.jpeg" alt="Robot lineup showing humanoid, legged, and underwater robotic systems" data-clue="clue 2/4: x=0.57, y=0.19. the next trace is in stylesheet.css">
         </div>
 
-        <div id="experience" class="section">
-          <div class="section-heading">
-            <p>02</p>
-            <h2>Experience</h2>
-          </div>
-          <div class="section-body">
-            <div class="entry">
-              <div class="entry-meta">
-                <p>2025</p>
-                <p>Seattle, WA</p>
-              </div>
-              <div class="entry-copy">
-                <h3>Applied Scientist II Intern, Amazon Robotics</h3>
-                <p>
-                  Developed proprioceptive nonprehensile manipulation behaviors for
-                  high-throughput bin stowing across tens of thousands of distinct item
-                  states in dense clutter and uncertain contact conditions.
-                </p>
-              </div>
-            </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Robotics engineer</p>
+          <h1 id="intro-title">Dynamics, control, and simulation for robots.</h1>
+          <p class="summary">
+            PhD candidate at Louisiana State University working on uncertainty-aware
+            physics simulation, differentiable dynamics, motion planning, and contact-rich
+            robotic systems.
+          </p>
+        </div>
+      </section>
 
-            <div class="entry">
-              <div class="entry-meta">
-                <p>2022 - Present</p>
-                <p>Baton Rouge, LA</p>
-              </div>
-              <div class="entry-copy">
-                <h3>Robotics Research and Teaching Assistant, LSU iCoreLab</h3>
-                <p>
-                  Built multibody models, feedback controllers, and trajectory planners
-                  for underwater vehicle-manipulator systems using CasADi, PyTorch,
-                  Python, and C++. Designed simulation workflows for validation and
-                  supported field deployments for uncrewed marine systems research.
-                </p>
-                <p>
-                  I also lead undergraduate labs in robotics and instrumentation.
-                </p>
-              </div>
-            </div>
-
-            <div class="entry">
-              <div class="entry-meta">
-                <p>2018 - 2021</p>
-                <p>Accra, Ghana</p>
-              </div>
-              <div class="entry-copy">
-                <h3>Software Engineer, Stanbic Bank</h3>
-                <p>
-                  Engineered backend systems for loan processing and tracking, built
-                  self-service mobile money banking features, and developed APIs for
-                  MobyCash, a digital cash management platform integrated with core
-                  banking infrastructure.
-                </p>
-              </div>
-            </div>
-          </div>
+      <section class="details" aria-label="Selected profile details">
+        <div class="column experience">
+          <h2>Experience</h2>
+          <p><strong>Tesla, Optimus</strong><span>Physics engine intern, 2026</span></p>
+          <p><strong>Amazon Robotics</strong><span>Applied scientist intern, 2025</span></p>
+          <p><strong>Photon Marine</strong><span>Technical sales associate, 2024</span></p>
+          <p><strong>LSU iCoreLab</strong><span>Robotics research and teaching assistant, 2022 - Present</span></p>
+          <p><strong>Stanbic Bank</strong><span>Software engineer, 2018 - 2021</span></p>
         </div>
 
-        <div id="projects" class="section">
-          <div class="section-heading">
-            <p>03</p>
-            <h2>Projects</h2>
-          </div>
-          <div class="section-body grid-list">
-            <div>
-              <h3>
-                <a href="https://github.com/edxmorgan/floating-KinDyn" target="_blank" rel="noopener noreferrer">floating-KinDyn</a>
-              </h3>
-              <p>
-                Differentiable multibody dynamics from URDF to symbolic kinematics,
-                dynamics, identification regressors, and code generation using CasADi.
-              </p>
-            </div>
-            <div>
-              <h3>
-                <a href="https://github.com/edxmorgan/diff_uv" target="_blank" rel="noopener noreferrer">DiffUV</a>
-              </h3>
-              <p>
-                Differentiable underwater vehicle dynamics with analytic derivatives
-                and JIT compilation for optimization and simulation.
-              </p>
-            </div>
-            <div>
-              <h3>
-                <a href="https://github.com/edxmorgan/uvms-simulator" target="_blank" rel="noopener noreferrer">UVMS Simulator</a>
-              </h3>
-              <p>
-                Physics-driven underwater vehicle-manipulator simulation with
-                hardware-in-the-loop workflows for validation and sim-to-real analysis.
-              </p>
-            </div>
-            <div>
-              <h3>
-                <a href="https://github.com/edxmorgan/casadi-on-gpu" target="_blank" rel="noopener noreferrer">casADi-on-gpu</a>
-              </h3>
-              <p>
-                GPU acceleration for CasADi symbolic functions for large-batch
-                evaluation and fast simulation.
-              </p>
-            </div>
-          </div>
+        <div class="column">
+          <h2>Work</h2>
+          <p>
+            <a href="https://github.com/edxmorgan/casadi-on-gpu" target="_blank" rel="noopener noreferrer">casadi-on-gpu</a>
+            <span>GPU acceleration for symbolic functions.</span>
+          </p>
+          <p>
+            <a href="https://edxmorgan.github.io/uvms-simulator" target="_blank" rel="noopener noreferrer">UVMS simulator</a>
+            <span>ROS 2 underwater robot simulation.</span>
+          </p>
+          <p>
+            <a href="https://github.com/edxmorgan/floating-KinDyn" target="_blank" rel="noopener noreferrer">floating-KinDyn</a>
+            <span>Differentiable multibody dynamics.</span>
+          </p>
+          <p>
+            <a href="https://github.com/edxmorgan/diff_uv" target="_blank" rel="noopener noreferrer">diff_uv</a>
+            <span>Differentiable underwater vehicle dynamics.</span>
+          </p>
         </div>
 
-        <div id="publications" class="section">
-          <div class="section-heading">
-            <p>04</p>
-            <h2>Publications</h2>
-          </div>
-          <div class="section-body compact-list">
-            <p>
-              <a href="https://arxiv.org/pdf/2603.06548" target="_blank" rel="noopener noreferrer">
-                Uncertainty-Aware Adaptive Dynamics for Underwater Vehicle Manipulator
-                Systems
-              </a>
-              <span>ICRA 2026</span>
-            </p>
-            <p>
-              <a href="https://link.springer.com/article/10.1007/s43154-022-00089-2" target="_blank" rel="noopener noreferrer">
-                Autonomous Underwater Manipulation: Current Trends in Dynamics,
-                Control, Planning, Perception, and Future Directions
-              </a>
-              <span>Current Robotics Reports, 2022</span>
-            </p>
-            <p>
-              <a href="https://ieeexplore.ieee.org/abstract/document/10337120" target="_blank" rel="noopener noreferrer">
-                A Probabilistic Framework for Hydrodynamic Parameter Estimation for
-                Underwater Manipulators
-              </a>
-              <span>OCEANS 2023</span>
-            </p>
-            <p>
-              <a href="https://ieeexplore.ieee.org/abstract/document/10637062" target="_blank" rel="noopener noreferrer">
-                Collision Free Path Planning for Underwater Vehicles in Rapidly
-                Changing Environments
-              </a>
-              <span>AIM 2024</span>
-            </p>
-            <p>
-              <a href="https://asmedigitalcollection.asme.org/IMECE/proceedings-abstract/IMECE2023/87639/1195865" target="_blank" rel="noopener noreferrer">
-                Model-Based Visual Control for Robotic Manipulators Using Udwadia
-                Kalaba Formulation
-              </a>
-              <span>IMECE 2023</span>
-            </p>
-          </div>
+        <div class="column">
+          <h2>Selected Papers</h2>
+          <p><strong>Risk-aware receding-horizon planning</strong><span>IROS 2026</span></p>
+          <p><strong>Uncertainty-aware UVMS dynamics</strong><span>ICRA 2026</span></p>
+          <p><strong>GPU-accelerated stochastic simulation</strong><span>OCEANS 2026</span></p>
+          <p><strong>Adaptive dynamics for unmanned surface vehicles</strong><span>OCEANS 2026</span></p>
         </div>
+      </section>
 
-        <div id="education" class="section">
-          <div class="section-heading">
-            <p>05</p>
-            <h2>Education</h2>
-          </div>
-          <div class="section-body">
-            <div class="entry">
-              <div class="entry-meta">
-                <p>2022 - Present</p>
-                <p>Baton Rouge, LA</p>
-              </div>
-              <div class="entry-copy">
-                <h3>Louisiana State University</h3>
-                <p>PhD in Mechanical Engineering, minor in Computer Science.</p>
-              </div>
-            </div>
-            <div class="entry">
-              <div class="entry-meta">
-                <p>2015 - 2019</p>
-                <p>Kumasi, Ghana</p>
-              </div>
-              <div class="entry-copy">
-                <h3>Kwame Nkrumah University of Science and Technology</h3>
-                <p>BSc in Mechanical Engineering, minor in Computer Science.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="blog" class="section">
-          <div class="section-heading">
-            <p>06</p>
-            <h2>Blog</h2>
-          </div>
-          <div class="section-body">
-            <div class="blog-card">
-              <p class="blog-meta">March 17, 2026</p>
-              <h3>
-                <a href="blog/intuition-behind-np-sum-p-log-p-over-q.html" target="_blank" rel="noopener noreferrer">
-                  Intuition Behind <code>np.sum(p * np.log(p / q))</code>
-                </a>
-              </h3>
-              <p>
-                A 2-minute read on KL divergence as a weighted mismatch score, why the
-                weighting comes from the reference distribution, and how to interpret the
-                log term intuitively.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div id="service" class="section">
-          <div class="section-heading">
-            <p>07</p>
-            <h2>Service</h2>
-          </div>
-          <div class="section-body compact-list">
-            <p>Reviewer for IEEE ICRA 2024, IEEE Transactions on Field Robotics 2025, and RSS 2026.</p>
-            <p>1st Runner-Up, MTN Ayoba Hackathon, 2021.</p>
-            <p>Excellent Student Award, College of Engineering, KNUST, 2015 - 2018.</p>
-            <p>Mentoring and outreach through LSU robotics programs, ENGage LSU, and earlier community-led initiatives.</p>
-          </div>
-        </div>
-
-        <div id="skills" class="section">
-          <div class="section-heading">
-            <p>08</p>
-            <h2>Skills</h2>
-          </div>
-          <div class="section-body skill-columns">
-            <div>
-              <h3>Programming</h3>
-              <p>C++, Python, CUDA, MATLAB, Java</p>
-            </div>
-            <div>
-              <h3>Robotics</h3>
-              <p>ROS2, OMPL, FCL, Gazebo, OpenCV</p>
-            </div>
-            <div>
-              <h3>Modeling</h3>
-              <p>CasADi, IPOPT, PyTorch, CVXPY, MOSEK, NumPy, SciPy</p>
-            </div>
-            <div>
-              <h3>Development</h3>
-              <p>Linux, Git, Docker</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <footer class="footer">
+        <span>C++, Python, CUDA, ROS 2, CasADi, PyTorch, Drake, OMPL, Genesis, Isaac Lab, Docker</span>
+        <a href="blog/intuition-behind-np-sum-p-log-p-over-q.html" data-clue="clue 4/4: weighted mismatch is also a navigation strategy">Blog</a>
+      </footer>
     </main>
+    <script>
+      console.info("clue 3/4: gradients are gone, but the grid remains. final clue: inspect the Blog link.");
+    </script>
   </body>
 </html>
